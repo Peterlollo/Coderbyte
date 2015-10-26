@@ -1,10 +1,13 @@
-function Palindrome(str) { 
-var reversed = str.match(/[a-z]/gi).reverse().join("");
 
-  for(i=0; i<reversed.length; i++) {
-   if(reversed[i] === str[i]) {
-     return true;
+function Palindrome(str) { 
+  
+  string1 = str.split(" ").join("");
+  string2 = str.match(/[a-z]/gi).reverse().join("");
+
+  if(string1 === string2) {
+    return true;
   }
-  }
-     return false;    
+  return false;
+
 }
+   
