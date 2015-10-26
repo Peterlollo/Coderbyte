@@ -24,6 +24,13 @@ function ArithGeo(arr) {
     if(geoCheck === arr.length-1) {
       answer = "Geometric";
     }
+      if(arr.length<3) {
+    answer = -1;
+  }
+    
+    return answer;
+    
+}
 
 
 // Alternate Solution
