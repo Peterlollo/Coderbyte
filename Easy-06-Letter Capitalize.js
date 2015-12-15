@@ -1,3 +1,21 @@
+//With Recursion
+function LetterCapitalize(str) { 
+  if(str.length === 0) {
+    return '';
+  }
+  var result = '';
+  var arr = str.split(' ');
+  var rmv = arr.shift().toString().split('');
+  result += rmv.shift().toUpperCase();
+  result += rmv.join('');
+  if(arr.length>0) {
+    result += ' ';
+  }
+  arr = arr.join(' ');
+  return (result += LetterCapitalize(arr));        
+}
+
+//Without Recursion
 function LetterCapitalize(str) { 
   var answer = "";
   
