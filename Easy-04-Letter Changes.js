@@ -1,3 +1,25 @@
+//With Recursion
+function LetterChanges(str) {
+  if(str.length === 0){
+    return '';
+  }
+  var alpha = "abcdefghijklmnopqrstuvwxyz";
+  var beta = "AbcdEfghIjklmnOpqrstUvwxyzAbcdEfghIjklmnOpqrstUvwxyz";
+  var result = '';
+  str = str.toLowerCase();
+  var arr = str.split('');
+  var rmv = arr.shift();
+  if(!(rmv.match(/[a-z]/))) {
+    result += rmv;
+  }
+  else {
+  result += beta.charAt(1+ alpha.indexOf(rmv));
+  }
+  arr = arr.join('');
+  return (result += LetterChanges(arr));     
+}
+
+//Without Recursion
 function LetterChanges(str) {
 
 var oldAlpha = "abcdefghijklmnopqrstuvwxyza";
