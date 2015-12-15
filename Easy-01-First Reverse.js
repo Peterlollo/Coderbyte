@@ -1,3 +1,16 @@
+//With Recursion
+function FirstReverse(str) { 
+  if(str.length === 0) {
+    return '';
+  }
+  var result = '';
+  var arr = str.split('');
+  result += arr.pop();
+  var arr = arr.join("");
+  return (result += FirstReverse(arr));
+}
+
+//Without Recursion
 function FirstReverse(str) { 
 var reversed = [];
 
