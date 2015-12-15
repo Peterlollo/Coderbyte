@@ -1,3 +1,30 @@
+//With Recursion
+function exOh (str) {
+  if(!(str.match(/[a-z]/))) {
+    str = str.split('').map(function(item) {
+      if(item === '-') {
+        return -1;
+      }
+      return item;
+    })
+   str = str.reduce(function(a,b) {
+      return parseInt(a) + parseInt(b);
+    })
+    return str === 0;
+  }
+  var arr = str.split('');
+  var rmv = arr.shift();
+  if(rmv === 'x') {
+    arr.push(1);
+  }
+  else if(rmv === 'o') {
+    arr.push('-');
+  }
+  arr = arr.join('');
+  return exOh(arr);
+}
+
+//Without Recursion
 function ExOh(str) { 
 
   var string = str.toLowerCase();
